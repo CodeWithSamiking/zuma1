@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZUMA | Modern Dining & Restaurant</title>
+<meta name="description" content="ZUMA — modern dining, bold flavours and warm hospitality in Abuja.">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--soft:#0b0b0b;--card:#111;--gold:#ffbe0b;--gold2:#ffd35a;--text:#f7f7f7;--muted:#aaa;--line:#222;--max:1280px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+img{width:100%;height:100%;object-fit:cover;display:block}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(calc(100% - 36px),var(--max));margin:auto}
+.eyebrow{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+section{padding:105px 0}.head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:42px}
+h2{font:600 clamp(40px,5vw,70px)/1.02 "Playfair Display",serif}.head p{max-width:500px;color:var(--muted)}
+/* NAV */
+.nav{height:78px;position:fixed;z-index:1000;top:0;left:0;right:0;transition:.3s}
+.nav.scrolled{background:#050505dd;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:700 27px "Playfair Display",serif;letter-spacing:.08em}.logo b{color:var(--gold)}
+.links{display:flex;gap:27px;align-items:center}.links a{font-size:13px;color:#bbb;position:relative;padding:8px 0}.links a:after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:.25s}.links a:hover,.links a.active{color:#fff}.links a:hover:after,.links a.active:after{width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 21px;border-radius:999px;border:1px solid transparent;font-size:13px;font-weight:700;transition:.25s;cursor:pointer}.gold{background:var(--gold);color:#000}.gold:hover{background:var(--gold2);transform:translateY(-2px)}.outline{border-color:#444;background:#ffffff08}.outline:hover{border-color:var(--gold);background:#ffbe0b12}
+.toggle{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#111;color:#fff}
+/* HERO */
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:80px}.hero-bg,.hero-bg img{position:absolute;inset:0}.hero-bg img{animation:zoom 13s ease-out forwards}.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000d,#0004 60%,#000a),linear-gradient(0deg,#000c,transparent 55%)}@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-content{position:relative;z-index:2;max-width:900px}.pill{display:inline-block;border:1px solid #ffbe0b66;background:#ffbe0b12;color:var(--gold2);border-radius:999px;padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:23px}.hero h1{font:600 clamp(58px,8vw,120px)/.9 "Playfair Display",serif;letter-spacing:-.045em}.hero h1 span{color:var(--gold)}.hero p{max-width:610px;color:#ccc;margin:25px 0 31px}.actions{display:flex;gap:10px;flex-wrap:wrap}
+.stats{position:absolute;z-index:3;bottom:38px;right:max(18px,calc((100% - var(--max))/2));display:flex}.stat{padding:0 22px;border-left:1px solid #ffffff33}.stat:first-child{border:0}.num{font-size:22px;font-weight:700}.label{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.1em}
+/* ABOUT */
+.about{background:var(--soft)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.about-img{height:620px;position:relative}.about-img img{border-radius:4px}.tag{position:absolute;left:-18px;bottom:28px;background:var(--gold);color:#000;padding:15px 20px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.about-copy p{color:var(--muted);margin:23px 0 32px;max-width:590px}.features{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.feature{padding:20px 15px 20px 0;border-bottom:1px solid var(--line)}.feature:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}.feature strong{display:block}.feature small{color:var(--muted)}
+/* MENU */
+.menu{background:#080808}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.filter{border:1px solid #333;background:transparent;color:#aaa;border-radius:999px;padding:9px 16px;cursor:pointer}.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#000}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.dish{background:var(--card);border:1px solid var(--line);transition:.35s;overflow:hidden}.dish:hover{transform:translateY(-6px);border-color:#ffbe0b55}.dish.hide{display:none}.dish-img{height:250px;position:relative;overflow:hidden}.dish-img img{transition:.5s}.dish:hover img{transform:scale(1.06)}.badge{position:absolute;top:14px;left:14px;background:var(--gold);color:#000;padding:6px 9px;font-size:9px;font-weight:800;text-transform:uppercase}.dish-body{padding:22px}.dish-top{display:flex;justify-content:space-between;gap:10px}.dish h3{font:600 22px "Playfair Display",serif}.price{color:var(--gold);font-weight:800;white-space:nowrap}.dish p{color:var(--muted);font-size:13px;margin:9px 0 18px;min-height:42px}.order{width:100%;height:43px;border:1px solid #ffbe0b66;background:transparent;color:var(--gold);font-weight:700;cursor:pointer}.order:hover{background:var(--gold);color:#000}
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:1.35fr .8fr .8fr;grid-template-rows:285px 285px;gap:9px}.gallery-item{overflow:hidden;cursor:pointer;position:relative}.gallery-item:first-child{grid-row:1/3}.gallery-item:after{content:"View";position:absolute;right:14px;bottom:14px;background:#0009;border:1px solid #ffffff55;padding:6px 10px;font-size:10px;opacity:0;transition:.25s}.gallery-item:hover:after{opacity:1}.gallery-item img{transition:.5s}.gallery-item:hover img{transform:scale(1.06)}
+/* REVIEWS */
+.reviews{background:var(--soft)}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review{padding:28px;background:#ffffff05;border:1px solid var(--line)}.stars{color:var(--gold);letter-spacing:4px;margin-bottom:17px}.review p{font:18px/1.5 "Playfair Display",serif;color:#ddd}.author{margin-top:22px;color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+/* RESERVATION */
+.reservation{background:radial-gradient(circle at 80% 20%,#ffbe0b12,transparent 30%)}.reserve-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.reserve-copy p{color:var(--muted);margin:20px 0 28px}.checks{display:grid;gap:12px;color:#ccc;font-size:13px}.checks span{color:var(--gold);margin-right:8px}.form{background:#ffffff07;border:1px solid var(--line);padding:29px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999}.field input,.field select,.field textarea{background:#090909;border:1px solid #292929;color:#fff;border-radius:4px;padding:13px;outline:0;width:100%}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{min-height:100px;resize:vertical}.note{color:#666;font-size:10px;margin-top:10px}
+/* FAQ + CONTACT */
+.faq{background:#080808}.faq-list{max-width:900px;margin:auto;border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;background:none;border:0;color:#fff;padding:22px 0;display:flex;justify-content:space-between;text-align:left;font-weight:700;cursor:pointer}.faq-q i{font-style:normal;color:var(--gold);font-size:22px;transition:.25s}.faq-item.open i{transform:rotate(45deg)}.faq-a{max-height:0;overflow:hidden;transition:max-height .35s}.faq-a p{color:var(--muted);padding:0 40px 22px 0;font-size:13px}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.contact-card{border:1px solid var(--line);background:#ffffff05;padding:30px}.contact-card h3{font:600 30px "Playfair Display",serif;margin-bottom:15px}.row{padding:15px 0;border-bottom:1px solid var(--line);font-size:13px}.row:last-child{border:0}.row small{display:block;color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:.12em}.map{min-height:400px;border:1px solid var(--line)}.map iframe{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(1) brightness(.65)}
+/* FOOTER */
+footer{border-top:1px solid var(--line);background:#020202;padding:60px 0 23px}.footer-grid{display:grid;grid-template-columns:1.5fr .7fr .7fr .8fr;gap:35px;padding-bottom:42px}.footer-grid p{color:#666;max-width:380px;font-size:12px;margin-top:12px}.ft-title{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:13px}.ft-links{display:grid;gap:8px;color:#888;font-size:12px}.ft-links a:hover{color:#fff}.socials{display:flex;gap:7px}.social{width:36px;height:36px;border:1px solid #292929;border-radius:50%;display:grid;place-items:center;font-size:10px;color:#aaa}.social:hover{background:var(--gold);color:#000;border-color:var(--gold)}.bottom{border-top:1px solid var(--line);padding-top:20px;color:#555;font-size:10px;display:flex;justify-content:space-between;gap:15px}
+/* UI */
+.wa{position:fixed;right:20px;bottom:20px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 10px 35px #0008}.toast{position:fixed;left:50%;bottom:22px;z-index:2000;transform:translate(-50%,25px);background:#fff;color:#000;padding:12px 17px;border-radius:999px;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}.lightbox{display:none;position:fixed;inset:0;z-index:1500;background:#000e;place-items:center;padding:20px}.lightbox.open{display:grid}.lightbox img{width:auto;max-width:94vw;max-height:88vh}.close{position:absolute;right:20px;top:20px;width:44px;height:44px;border-radius:50%;border:1px solid #444;background:#111;color:#fff;font-size:25px}.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:1050px){.about-grid,.reserve-grid,.contact-grid{grid-template-columns:1fr}.about-img{height:520px}.menu-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:850px){section{padding:80px 0}.toggle{display:block}.links{display:none;position:absolute;top:86px;left:18px;right:18px;background:#0a0a0af7;border:1px solid var(--line);padding:10px;border-radius:8px;flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:12px}.nav .btn{display:none}.hero{min-height:auto;padding:150px 0 80px}.stats{position:relative;right:auto;bottom:auto;margin-top:55px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px 240px}.gallery-item:first-child{grid-row:auto;grid-column:1/-1}.review-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.container{width:calc(100% - 28px)}.head{display:block}.head p{margin-top:16px}.hero h1{font-size:clamp(54px,16vw,80px)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{border:0;border-top:1px solid #ffffff22;padding:12px 0}.stat:nth-child(3){grid-column:1/-1}.about-img{height:430px}.tag{left:0}.features,.menu-grid,.form-grid,.footer-grid{grid-template-columns:1fr}.feature:nth-child(even){padding-left:0;border-left:0}.field.full{grid-column:auto}.gallery-grid{display:block}.gallery-item{height:270px;margin-bottom:8px}.gallery-item:nth-child(n+2){display:none}.map,.map iframe{min-height:330px}.bottom{flex-direction:column}.wa{right:15px;bottom:15px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ===== ZUMA: ADDITIONAL FUNCTIONALITY ONLY ===== */
+.zf-cart-btn{position:relative;display:inline-flex!important;align-items:center;gap:7px}
+.zf-cart-count{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:#ffbe0b;color:#000;display:inline-grid;place-items:center;font-size:11px;font-weight:800}
+.zf-cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:10000;opacity:0;visibility:hidden;transition:.25s}
+.zf-cart-overlay.open{opacity:1;visibility:visible}
+.zf-cart-panel{position:absolute;right:0;top:0;width:min(470px,94vw);height:100%;background:#080808;border-left:1px solid #333;color:#fff;padding:28px;overflow:auto;transform:translateX(100%);transition:.3s}
+.zf-cart-overlay.open .zf-cart-panel{transform:translateX(0)}
+.zf-cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292929;padding-bottom:18px;margin-bottom:18px}
+.zf-cart-head h3{font:600 28px "Playfair Display",serif;margin:0}
+.zf-cart-close{border:1px solid #333;background:transparent;color:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer}
+.zf-cart-empty{text-align:center;color:#777;padding:45px 10px}
+.zf-cart-item{display:grid;grid-template-columns:62px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid #222;align-items:center}
+.zf-cart-thumb{width:62px;height:62px;object-fit:cover;border-radius:5px}
+.zf-cart-item-name{font-weight:700;font-size:14px}.zf-cart-item-price{color:#aaa;font-size:12px;margin-top:4px}
+.zf-qty{display:flex;align-items:center;gap:8px;margin-top:8px}.zf-qty button{width:27px;height:27px;border:1px solid #333;background:#111;color:#fff;cursor:pointer;border-radius:3px}.zf-qty span{min-width:18px;text-align:center}
+.zf-remove{border:0;background:transparent;color:#777;font-size:11px;cursor:pointer;margin-top:5px}
+.zf-cart-total{display:flex;justify-content:space-between;border-top:1px solid #333;margin-top:20px;padding-top:18px;font-weight:800;font-size:19px}
+.zf-cart-actions{display:grid;gap:9px;margin-top:18px}.zf-cart-actions button{width:100%;padding:13px;border-radius:3px;cursor:pointer;font-weight:700}
+.zf-gold{background:#ffbe0b;border:1px solid #ffbe0b;color:#000}.zf-outline{background:transparent;border:1px solid #444;color:#fff}
+.zf-checkout{display:none;margin-top:20px;padding-top:20px;border-top:1px solid #292929}.zf-checkout.open{display:block}
+.zf-checkout h4{font:600 23px "Playfair Display",serif;margin:0 0 14px}
+.zf-field{display:grid;gap:6px;margin-bottom:11px}.zf-field label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999}
+.zf-field input,.zf-field select,.zf-field textarea{background:#090909;border:1px solid #292929;color:#fff;border-radius:4px;padding:12px;width:100%;box-sizing:border-box}.zf-field textarea{min-height:75px;resize:vertical}
+.zf-order-message{display:none;margin-top:12px;padding:11px;border:1px solid #333;color:#bbb;font-size:12px}.zf-order-message.show{display:block}
+@media(max-width:600px){.zf-cart-panel{padding:20px;width:calc(100vw - 20px)}.zf-cart-btn{margin-top:8px!important}}
+
+</style>
+
+<style id="zuma-final-small-box">
+/* Only the food image box size is adjusted; image sources/design remain unchanged. */
+.dish-img {
+  height: 190px !important;
+}
+@media (max-width: 700px) {
+  .dish-img {
+    height: 155px !important;
+  }
+}
+</style>
+<script id="zuma-final-button-labels">
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".dish .order").forEach(function (button) {
+    button.textContent = "Add to Cart";
+    button.setAttribute("aria-label", "Add this item to cart");
+  });
+});
+</script>
+
+
+<style id="zuma-small-food-cards">
+/* Make the food cards compact like the reference screenshot. */
+@media (min-width: 1000px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+@media (min-width: 701px) and (max-width: 999px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+.dish-img {
+  height: 190px !important;
+}
+@media (max-width: 700px) {
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dish-img {
+    height: 155px !important;
+  }
+}
+</style>
+
+
+<style id="zuma-mobile-friendly-only">
+/* Mobile-friendly adjustments only.
+   Existing desktop layout, content, functionality and styling are preserved. */
+
+@media (max-width: 600px) {
+  /* Prevent long words/controls from creating horizontal overflow */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  /* Navigation */
+  .nav {
+    height: 70px;
+  }
+
+  .nav-in {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .toggle {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  .links {
+    top: 74px;
+    left: 12px;
+    right: 12px;
+    max-height: calc(100svh - 88px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 55px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 72px);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+
+  .hero p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 20px 0 26px;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions .btn {
+    flex: 1 1 160px;
+    min-height: 48px;
+  }
+
+  .stats {
+    width: 100%;
+    margin-top: 38px;
+  }
+
+  .stat {
+    min-width: 0;
+  }
+
+  .num {
+    font-size: 20px;
+  }
+
+  /* Sections */
+  section {
+    padding: 68px 0;
+  }
+
+  .head {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: clamp(34px, 10vw, 52px);
+  }
+
+  .head p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  /* About */
+  .about-grid {
+    gap: 38px;
+  }
+
+  .about-img {
+    height: min(430px, 100vw);
+  }
+
+  .about-copy p {
+    font-size: 13px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature,
+  .feature:nth-child(even) {
+    padding: 16px 0;
+    border-left: 0;
+  }
+
+  /* Menu */
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+    margin-right: -4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    min-height: 42px;
+    white-space: nowrap;
+  }
+
+  .menu-grid {
+    gap: 12px;
+  }
+
+  .dish {
+    width: 100%;
+  }
+
+  .dish-img {
+    height: 155px !important;
+  }
+
+  .dish-body {
+    padding: 17px;
+  }
+
+  .dish-top {
+    align-items: flex-start;
+  }
+
+  .dish h3 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .dish p {
+    font-size: 12px;
+    line-height: 1.55;
+    min-height: 0;
+  }
+
+  .order {
+    min-height: 46px;
+  }
+
+  /* Gallery */
+  .gallery-item {
+    height: 235px;
+  }
+
+  /* Reviews */
+  .review {
+    padding: 22px;
+  }
+
+  .review p {
+    font-size: 16px;
+  }
+
+  /* Reservation */
+  .reserve-grid {
+    gap: 38px;
+  }
+
+  .form {
+    padding: 19px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 46px;
+    font-size: 16px; /* avoids unwanted iOS zoom */
+  }
+
+  .field textarea {
+    min-height: 105px;
+  }
+
+  /* FAQ */
+  .faq-q {
+    min-height: 54px;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .faq-a p {
+    padding-right: 10px;
+  }
+
+  /* Contact / map */
+  .contact-grid {
+    gap: 12px;
+  }
+
+  .contact-card {
+    padding: 22px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 300px;
+  }
+
+  /* Footer */
+  footer {
+    padding-top: 45px;
+  }
+
+  .footer-grid {
+    gap: 28px;
+  }
+
+  .bottom {
+    line-height: 1.6;
+  }
+
+  /* Cart */
+  .zf-cart-panel {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 15px;
+  }
+
+  .zf-cart-head h3 {
+    font-size: 24px;
+  }
+
+  .zf-cart-item {
+    grid-template-columns: 54px minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  .zf-cart-thumb {
+    width: 54px;
+    height: 54px;
+  }
+
+  .zf-cart-item-name {
+    overflow-wrap: anywhere;
+  }
+
+  .zf-cart-item > strong {
+    font-size: 12px;
+  }
+
+  .zf-qty button,
+  .zf-cart-close {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .zf-cart-actions button,
+  #zfPlaceOrder {
+    min-height: 48px;
+  }
+
+  .zf-field input,
+  .zf-field select,
+  .zf-field textarea {
+    font-size: 16px;
+  }
+
+  /* Keep fixed UI from covering content */
+  .toast {
+    width: calc(100% - 30px);
+    text-align: center;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+
+  .hero {
+    padding-top: 112px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .btn {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .dish-body {
+    padding: 15px;
+  }
+
+  .dish h3 {
+    font-size: 19px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .zf-cart-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .zf-cart-item > strong {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="zf-cart-overlay" id="zfCartOverlay" aria-hidden="true">
+  <aside class="zf-cart-panel" aria-label="Shopping cart">
+    <div class="zf-cart-head"><h3>Your Order</h3><button class="zf-cart-close" id="zfCartClose" type="button">×</button></div>
+    <div id="zfCartItems"></div>
+    <div id="zfCartSummary" hidden>
+      <div class="zf-cart-total"><span>Subtotal</span><span id="zfCartTotal">₦0</span></div>
+      <div class="zf-cart-actions"><button class="zf-gold" id="zfCheckoutOpen" type="button">Continue to Checkout</button><button class="zf-outline" id="zfContinue" type="button">Continue Shopping</button></div>
+    </div>
+    <div class="zf-checkout" id="zfCheckout">
+      <h4>Delivery Details</h4>
+      <div class="zf-field"><label for="zfName">Full Name</label><input id="zfName" required></div>
+      <div class="zf-field"><label for="zfPhone">Phone Number</label><input id="zfPhone" type="tel" required></div>
+      <div class="zf-field"><label for="zfType">Order Type</label><select id="zfType"><option value="Delivery">Delivery</option><option value="Pickup">Pickup</option></select></div>
+      <div class="zf-field"><label for="zfAddress">Delivery Address</label><textarea id="zfAddress" placeholder="Enter your delivery address"></textarea></div>
+      <div class="zf-field"><label for="zfNotes">Order Notes</label><textarea id="zfNotes" placeholder="Landmark or special instructions"></textarea></div>
+      <button class="zf-gold" id="zfPlaceOrder" type="button" style="width:100%;padding:13px;border-radius:3px;cursor:pointer;font-weight:700">Place Order Request</button>
+      <div class="zf-order-message" id="zfOrderMessage"></div>
+    </div>
+  </aside>
+</div>
+
+<header class="nav" id="nav"><div class="container nav-in">
+<a class="logo" href="#home">ZU<b>MA</b></a>
+<nav class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reservation">Reservation</a><a href="#contact">Contact</a></nav>
+<a class="btn gold" href="#reservation">Reserve Table</a><button class="toggle" id="toggle" aria-label="Menu">☰</button>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="hero-bg"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=90" alt="Elegant restaurant dining table"></div>
+<div class="container"><div class="hero-content reveal"><span class="pill">Abuja's Modern Dining Experience</span><h1>Modern Dining <span>Redefined.</span></h1><p>Bold flavours, refined presentation and a warm atmosphere created for memorable moments in the heart of Abuja.</p><div class="actions"><a class="btn gold" href="#menu">Explore Menu →</a><a class="btn outline" href="#reservation">Book a Table</a></div></div>
+<div class="stats"><div class="stat"><div class="num">4.9★</div><div class="label">Guest Rating</div></div><div class="stat"><div class="num">20+</div><div class="label">Signature Dishes</div></div><div class="stat"><div class="num">7 Days</div><div class="label">Open Weekly</div></div></div></div></section>
+
+<section class="about" id="about"><div class="container about-grid"><div class="about-img reveal"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=90" alt="ZUMA restaurant interior" loading="lazy"><span class="tag">Since 2018</span></div><div class="about-copy reveal"><div class="eyebrow">The ZUMA Story</div><h2>Good food. Beautifully simple.</h2><p>ZUMA brings together contemporary cooking, quality ingredients and thoughtful hospitality. Whether it is a quick lunch, relaxed dinner or special celebration, every detail is designed to make your time with us feel effortless.</p><div class="features"><div class="feature"><strong>Fresh Ingredients</strong><small>Quality produce selected with care.</small></div><div class="feature"><strong>Creative Menu</strong><small>Modern dishes with local character.</small></div><div class="feature"><strong>Calm Ambiance</strong><small>A polished space to slow down and enjoy.</small></div><div class="feature"><strong>Expert Service</strong><small>Friendly hospitality from arrival to goodbye.</small></div></div></div></div></section>
+
+<section class="menu" id="menu"><div class="container"><div class="head reveal"><div><div class="eyebrow">From Our Kitchen</div><h2>A menu worth remembering.</h2></div><p>From Nigerian favourites to modern international plates, discover dishes prepared to order and served with ZUMA's signature touch.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="starter">Starters</button><button class="filter" data-filter="main">Mains</button><button class="filter" data-filter="dessert">Desserts</button><button class="filter" data-filter="drink">Drinks</button></div>
+<div class="menu-grid">
+<article class="dish reveal" data-cat="main">
+    <div class="dish-img">
+        <img src="fa.png" alt="Jollof Rice" loading="lazy">
+        <span class="badge">Chef's Pick</span>
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Jollof Rice</h3>
+            <span class="price">₦6,800</span>
+        </div>
+        <p>Rich and flavourful Nigerian jollof rice, perfectly seasoned and cooked with aromatic spices.</p>
+        <button class="order" data-item="Jollof Rice" data-price="₦6,800">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="starter">
+    <div class="dish-img">
+        <img src="fb.png" alt="Jollof Rice with Chicken" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Jollof Rice with Chicken</h3>
+            <span class="price">₦4,900</span>
+        </div>
+        <p>Fragrant Nigerian jollof rice served with tender, well-seasoned grilled chicken.</p>
+        <button class="order" data-item="Jollof Rice with Chicken" data-price="₦4,900">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="main">
+    <div class="dish-img">
+        <img src="fc.png" alt="Fried Rice" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Fried Rice</h3>
+            <span class="price">₦5,800</span>
+        </div>
+        <p>Delicious Nigerian fried rice prepared with colourful vegetables, savoury seasoning and aromatic spices.</p>
+        <button class="order" data-item="Fried Rice" data-price="₦5,800">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="main">
+    <div class="dish-img">
+        <img src="fd.png" alt="Chinese Fried Rice" loading="lazy">
+        <span class="badge">Popular</span>
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Chinese Fried Rice</h3>
+            <span class="price">₦7,200</span>
+        </div>
+        <p>Flavourful Chinese-style fried rice tossed with fresh vegetables, savoury seasoning and aromatic spices.</p>
+        <button class="order" data-item="Chinese Fried Rice" data-price="₦7,200">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f1.png" alt="Basmati White Rice and Stew" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Basmati White Rice &amp; Stew</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Premium fluffy basmati white rice served with rich, savoury Nigerian stew.</p>
+        <button class="order" data-item="Basmati White Rice & Stew" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f2.png" alt="Coconut Basmati Rice" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Coconut Basmati Rice</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Fragrant basmati rice gently cooked with creamy coconut for a rich and delicious flavour.</p>
+        <button class="order" data-item="Coconut Basmati Rice" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f3.png" alt="Seafood Sauce with Basmati Rice" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Seafood Sauce &amp; Basmati Rice</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Tender seafood cooked in a rich, savoury sauce and served with fragrant basmati rice.</p>
+        <button class="order" data-item="Seafood Sauce with Basmati Rice" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f4.png" alt="White Rice and Stew" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>White Rice &amp; Stew</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Soft, fluffy white rice paired with rich and flavourful Nigerian stew.</p>
+        <button class="order" data-item="White Rice & Stew" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f5.png" alt="Ogbono Soup" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Ogbono Soup</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Rich and hearty Nigerian ogbono soup prepared with traditional spices and delicious ingredients.</p>
+        <button class="order" data-item="Ogbono Soup" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+    <div class="dish-img">
+        <img src="f6.png" alt="Egusi Soup" loading="lazy">
+    </div>
+    <div class="dish-body">
+        <div class="dish-top">
+            <h3>Egusi Soup</h3>
+            <span class="price">₦2,500</span>
+        </div>
+        <p>Classic Nigerian egusi soup cooked with ground melon seeds, rich spices and savoury ingredients.</p>
+        <button class="order" data-item="Egusi Soup" data-price="₦2,500">Order on WhatsApp</button>
+    </div>
+</article>
+
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f7.png" alt="Okro Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Okro Soup</h3><span class="price">₦2,500</span></div><p>Fresh and delicious okro soup prepared with rich ingredients and traditional Nigerian spices.</p><button class="order" data-item="Okro Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f8.png" alt="Afang Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Afang Soup</h3><span class="price">₦2,500</span></div><p>Traditional Afang soup made with fresh leafy vegetables, savoury ingredients and rich seasoning.</p><button class="order" data-item="Afang Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f9.png" alt="Vegetable Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Vegetable Soup</h3><span class="price">₦2,500</span></div><p>A tasty Nigerian vegetable soup made with fresh greens, savoury ingredients and delicious spices.</p><button class="order" data-item="Vegetable Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f10.png" alt="Fisherman Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Fisherman Soup</h3><span class="price">₦2,500</span></div><p>A rich seafood soup prepared with fresh fish, seafood, aromatic spices and a savoury broth.</p><button class="order" data-item="Fisherman Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f11.png" alt="Seafood Okro" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Seafood Okro</h3><span class="price">₦2,500</span></div><p>Delicious okro soup combined with fresh seafood and rich, savoury Nigerian seasoning.</p><button class="order" data-item="Seafood Okro" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f12.png" alt="Semovita" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Semovita</h3><span class="price">₦2,500</span></div><p>Soft, smooth and freshly prepared semovita, perfect for enjoying with your favourite soup.</p><button class="order" data-item="Semovita" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f13.png" alt="Eba Garri" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Eba / Garri</h3><span class="price">₦2,500</span></div><p>Freshly prepared eba made from garri, served smooth and delicious with your choice of Nigerian soup.</p><button class="order" data-item="Eba / Garri" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f14.png" alt="Oatmeal" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Oatmeal</h3><span class="price">₦2,500</span></div><p>Warm, creamy and comforting oatmeal prepared into a smooth and satisfying meal.</p><button class="order" data-item="Oatmeal" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f15.png" alt="Plantain Flour" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Plantain Flour</h3><span class="price">₦2,500</span></div><p>Smooth and delicious plantain flour swallow, perfect for pairing with rich Nigerian soups.</p><button class="order" data-item="Plantain Flour" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f16.png" alt="Poundo Yam" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Poundo Yam</h3><span class="price">₦2,500</span></div><p>Soft, smooth and freshly prepared poundo yam, perfect with a variety of rich Nigerian soups.</p><button class="order" data-item="Poundo Yam" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f17.png" alt="Beef" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Beef</h3><span class="price">₦2,500</span></div><p>Tender and flavourful beef, carefully prepared and seasoned for a rich and satisfying taste.</p><button class="order" data-item="Beef" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f18.png" alt="Goat Meat" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Goat Meat</h3><span class="price">₦2,500</span></div><p>Tender, juicy goat meat seasoned with delicious spices and cooked to perfection.</p><button class="order" data-item="Goat Meat" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f19.png" alt="Chicken R/8" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken (R/8)</h3><span class="price">₦2,500</span></div><p>Well-seasoned tender chicken portion, freshly prepared and full of flavour.</p><button class="order" data-item="Chicken (R/8)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f20.png" alt="Chicken R/4" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken (R/4)</h3><span class="price">₦2,500</span></div><p>A generous portion of tender, well-seasoned chicken prepared for a delicious and satisfying meal.</p><button class="order" data-item="Chicken (R/4)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f21.png" alt="Catfish" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Catfish</h3><span class="price">₦2,500</span></div><p>Fresh, tender catfish seasoned with aromatic spices and prepared for a rich, delicious flavour.</p><button class="order" data-item="Catfish" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f22.png" alt="Croaker" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Croaker</h3><span class="price">₦2,500</span></div><p>Fresh croaker fish, expertly seasoned and prepared to deliver a delicious and satisfying taste.</p><button class="order" data-item="Croaker" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f23.png" alt="Jumbo Size Snail" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Jumbo Size Snail</h3><span class="price">₦2,500</span></div><p>Large, tender snail seasoned with rich spices and prepared for a delicious and satisfying bite.</p><button class="order" data-item="Jumbo Size Snail" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f24.png" alt="Fried Yam Chips" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Fried Yam Chips</h3><span class="price">₦2,500</span></div><p>Crispy golden yam chips, freshly fried and perfect as a tasty side or snack.</p><button class="order" data-item="Fried Yam Chips" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f25.png" alt="Sweet Potatoes Large Size" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Sweet Potatoes (Large Size)</h3><span class="price">₦2,500</span></div><p>Generous portions of sweet potatoes, freshly prepared and served golden and delicious.</p><button class="order" data-item="Sweet Potatoes (Large Size)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f26.png" alt="Sweet Potatoes Regular Size" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Sweet Potatoes (Regular Size)</h3><span class="price">₦2,500</span></div><p>Freshly prepared sweet potatoes in a regular serving, golden, tasty and satisfying.</p><button class="order" data-item="Sweet Potatoes (Regular Size)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f27.png" alt="French fries (large size)" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>French Fries (Large Size)</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Crispy, golden-cut potato fries — generous large portion, lightly salted and perfectly crunchy.</p>
+    <button class="order" data-item="French Fries (Large Size)" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f28.png" alt="French fries (regular size)" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>French Fries (Regular Size)</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Classic crispy golden potato fries — regular portion, tasty and satisfying any time.</p>
+    <button class="order" data-item="French Fries (Regular Size)" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f29.png" alt="Fried plantain" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Fried Plantain</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Sweet, ripe plantain fried until golden — soft inside with a lovely caramelized edge.</p>
+    <button class="order" data-item="Fried Plantain" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f30.png" alt="chips & chicken" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Chips & Chicken</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Crispy fries paired with tender seasoned chicken — a hearty, filling combo you’ll love.</p>
+    <button class="order" data-item="Chips & Chicken" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f31.png" alt="yam porridge" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Yam Porridge</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Soft yam cooked in rich, savoury palm-oil sauce with spices — warm, comforting and tasty.</p>
+    <button class="order" data-item="Yam Porridge" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f32.png" alt="plain omelette" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Plain Omelette</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Fresh eggs whipped and fried — simple, fluffy and delicious with every bite.</p>
+    <button class="order" data-item="Plain Omelette" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f33.png" alt="sardine omelette" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Sardine Omelette</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Fluffy eggs mixed with seasoned sardine — rich, flavorful and nicely packed with taste.</p>
+    <button class="order" data-item="Sardine Omelette" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f34.png" alt="chicken pepper soup" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Chicken Pepper Soup</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Spiced, hot pepper soup with tender chicken — rich aroma, warming and gently spicy.</p>
+    <button class="order" data-item="Chicken Pepper Soup" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f35.png" alt="Goat meat pepper Soup" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Goat Meat Pepper Soup</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Fresh goat meat in traditional spicy broth — fragrant, hearty and deeply satisfying.</p>
+    <button class="order" data-item="Goat Meat Pepper Soup" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+<article class="dish reveal" data-cat="drink">
+  <div class="dish-img"><img src="f36.png" alt="catfish pepper soup" loading="lazy"></div>
+  <div class="dish-body">
+    <div class="dish-top">
+      <h3>Catfish Pepper Soup</h3>
+      <span class="price">₦2,500</span>
+    </div>
+    <p>Fresh catfish in delicate, spicy traditional broth — light, tasty and full of flavour.</p>
+    <button class="order" data-item="Catfish Pepper Soup" data-price="₦2,500">Order on WhatsApp</button>
+  </div>
+</article>
+
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f37.png" alt="Croaker Fish Pepper Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Croaker Fish Pepper Soup</h3><span class="price">₦2,500</span></div><p>Fresh croaker fish cooked in a hot, flavourful pepper soup with aromatic herbs and traditional spices.</p><button class="order" data-item="Croaker Fish Pepper Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f38.png" alt="Dry Fish Pepper Soup" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Dry Fish Pepper Soup</h3><span class="price">₦2,500</span></div><p>Rich and spicy pepper soup prepared with flavourful dry fish, aromatic herbs and traditional spices.</p><button class="order" data-item="Dry Fish Pepper Soup" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f39.png" alt="Chicken Caesar Salad" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken Caesar Salad</h3><span class="price">₦2,500</span></div><p>Crisp salad greens topped with tender grilled chicken, creamy Caesar dressing and fresh ingredients.</p><button class="order" data-item="Chicken Caesar Salad" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f40.png" alt="Fresh Salad" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Fresh Salad</h3><span class="price">₦2,500</span></div><p>A fresh and colourful mix of crisp vegetables prepared for a light and refreshing meal.</p><button class="order" data-item="Fresh Salad" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f41.png" alt="Chicken Club Sandwich" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken Club Sandwich</h3><span class="price">₦2,500</span></div><p>Layers of tender chicken, fresh vegetables and tasty fillings served between toasted bread.</p><button class="order" data-item="Chicken Club Sandwich" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f42.png" alt="Coleslaw Salad" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Coleslaw</h3><span class="price">₦2,500</span></div><p>Crisp shredded cabbage and fresh vegetables tossed in a creamy, delicious dressing.</p><button class="order" data-item="Coleslaw" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f43.png" alt="Vegetable Salad" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Vegetable Salad</h3><span class="price">₦2,500</span></div><p>A colourful combination of fresh vegetables, crisp greens and a light, tasty dressing.</p><button class="order" data-item="Vegetable Salad" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f44.png" alt="Special Indomie with Egg" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Special Indomie &amp; Egg</h3><span class="price">₦2,500</span></div><p>Specially prepared Indomie noodles tossed with tasty ingredients and served with egg.</p><button class="order" data-item="Special Indomie & Egg" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f45.png" alt="Indomie with R/8 Chicken" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Indomie with R/8 Chicken</h3><span class="price">₦2,500</span></div><p>Flavourful Indomie noodles served with a tender, well-seasoned chicken R/8 portion.</p><button class="order" data-item="Indomie with R/8 Chicken" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f46.png" alt="Spaghetti Napolitano" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Spaghetti Napolitano</h3><span class="price">₦2,500</span></div><p>Classic spaghetti tossed in a rich tomato-based sauce with aromatic herbs and seasoning.</p><button class="order" data-item="Spaghetti Napolitano" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f47.png" alt="Spaghetti Napolitano with Fish" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Spaghetti Napolitano with Fish</h3><span class="price">₦2,500</span></div><p>Classic spaghetti Napolitano served with a deliciously seasoned catfish or croaker fish.</p><button class="order" data-item="Spaghetti Napolitano with Fish" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f48.png" alt="Vegetable Beans" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Vegetable Beans</h3><span class="price">₦2,500</span></div><p>Rich and hearty beans cooked with fresh vegetables and carefully selected seasonings for a delicious meal.</p><button class="order" data-item="Vegetable Beans" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f49.png" alt="Akidi Black Beans" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Akidi (Black Beans)</h3><span class="price">₦2,500</span></div><p>Traditional Akidi black beans cooked to perfection with rich flavours and aromatic seasonings.</p><button class="order" data-item="Akidi (Black Beans)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f50.png" alt="Chicken or Beef Burger" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken/Beef Burger</h3><span class="price">₦2,500</span></div><p>A juicy chicken or beef burger layered with fresh vegetables, tasty sauce and a soft toasted bun, served without fries.</p><button class="order" data-item="Chicken/Beef Burger" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f51.png" alt="Chicken or Beef Burger with Regular Fries" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken/Beef Burger with Regular Fries</h3><span class="price">₦2,500</span></div><p>A delicious chicken or beef burger served with a side of crispy regular French fries.</p><button class="order" data-item="Chicken/Beef Burger with Regular Fries" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f52.png" alt="Chicken or Beef Burger with Large Fries" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Chicken/Beef Burger with Large Fries</h3><span class="price">₦2,500</span></div><p>A satisfying chicken or beef burger paired with a generous serving of crispy large French fries.</p><button class="order" data-item="Chicken/Beef Burger with Large Fries" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f53.png" alt="Regular Shawarma" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Regular Shawarma</h3><span class="price">₦2,500</span></div><p>A flavourful regular shawarma filled with tender meat, fresh vegetables and creamy sauce.</p><button class="order" data-item="Regular Shawarma" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f54.png" alt="Jumbo Shawarma" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Jumbo Shawarma</h3><span class="price">₦2,500</span></div><p>A generously filled jumbo shawarma packed with tender meat, fresh vegetables and delicious sauce.</p><button class="order" data-item="Jumbo Shawarma" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f55.png" alt="Extra Sauce" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Extra Sauce</h3><span class="price">₦2,500</span></div><p>A rich and flavourful extra serving of our signature sauce, perfect for adding more taste to your meal.</p><button class="order" data-item="Extra Sauce" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f56.png" alt="Extra Burger Patty" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Extra Burger Patty</h3><span class="price">₦2,500</span></div><p>An extra juicy and well-seasoned burger patty, perfect for making your burger even more satisfying.</p><button class="order" data-item="Extra Burger Patty" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f57.png" alt="Pepper Goat Meat" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Pepper Goat Meat</h3><span class="price">₦2,500</span></div><p>Tender goat meat cooked in a rich, spicy pepper sauce with aromatic herbs and traditional seasonings.</p><button class="order" data-item="Pepper Goat Meat" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f58.png" alt="Pepper Beef" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Pepper Beef</h3><span class="price">₦2,500</span></div><p>Tender beef simmered in a bold, spicy pepper sauce with delicious herbs and seasonings.</p><button class="order" data-item="Pepper Beef" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f59.png" alt="Pepper Chicken" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Pepper Chicken</h3><span class="price">₦2,500</span></div><p>Tender chicken pieces coated in a rich and spicy pepper sauce with aromatic herbs and seasonings.</p><button class="order" data-item="Pepper Chicken" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f60.png" alt="Goat Head Isi Ewu" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Goat Head (Isi Ewu)</h3><span class="price">₦2,500</span></div><p>Traditional Isi Ewu prepared with tender goat head, rich spices and a deliciously seasoned sauce.</p><button class="order" data-item="Goat Head (Isi Ewu)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f61.png" alt="Water" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Water</h3><span class="price">₦2,500</span></div><p>Refreshing bottled water, perfect for keeping you hydrated with your meal.</p><button class="order" data-item="Water" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f62.png" alt="Minerals" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Minerals</h3><span class="price">₦2,500</span></div><p>Refreshing chilled soft drinks, perfect for enjoying alongside your meal.</p><button class="order" data-item="Minerals" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f63.png" alt="Andre Brut" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Andre Brut</h3><span class="price">₦2,500</span></div><p>A crisp and refreshing sparkling wine with a clean, balanced finish.</p><button class="order" data-item="Andre Brut" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f64.png" alt="Five Alive" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Five Alive</h3><span class="price">₦2,500</span></div><p>A refreshing fruit drink with a vibrant blend of fruity flavours, perfect for any meal.</p><button class="order" data-item="Five Alive" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f65.png" alt="Cranberry Big Pack" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Cranberry — Big Pack</h3><span class="price">₦2,500</span></div><p>A refreshing cranberry drink served in a generous pack with a delicious fruity taste.</p><button class="order" data-item="Cranberry — Big Pack" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f66.png" alt="Andre Rosé" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Andre Rosé</h3><span class="price">₦2,500</span></div><p>A refreshing rosé sparkling wine with delicate fruit flavours and a smooth finish.</p><button class="order" data-item="Andre Rosé" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f67.png" alt="Veuve Clicquot Rosé" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Veuve Clicquot Rosé</h3><span class="price">₦2,500</span></div><p>An elegant rosé champagne with vibrant fruit notes, freshness and a refined finish.</p><button class="order" data-item="Veuve Clicquot Rosé" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f68.png" alt="Veuve Clicquot Brut" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Veuve Clicquot Brut</h3><span class="price">₦2,500</span></div><p>A refined brut champagne with bright fruit character, freshness and a smooth, elegant finish.</p><button class="order" data-item="Veuve Clicquot Brut" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f69.png" alt="Watermelon Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Watermelon Juice (35cl)</h3><span class="price">₦2,500</span></div><p>Fresh watermelon juice with a naturally sweet and refreshing taste, served chilled.</p><button class="order" data-item="Watermelon Juice (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f70.png" alt="Watermelon and Orange Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Watermelon &amp; Orange (35cl)</h3><span class="price">₦2,500</span></div><p>A refreshing blend of sweet watermelon and zesty orange, freshly prepared and served chilled.</p><button class="order" data-item="Watermelon & Orange (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f71.png" alt="Observatory 20" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Observatory 20</h3><span class="price">₦2,500</span></div><p>A smooth and refreshing bottled drink, perfect for enjoying with your meal.</p><button class="order" data-item="Observatory 20" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f72.png" alt="Malt" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Malt</h3><span class="price">₦2,500</span></div><p>A rich and refreshing malt drink with a smooth, satisfying taste.</p><button class="order" data-item="Malt" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f73.png" alt="M Extra Smooth" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>M/Extra Smooth</h3><span class="price">₦2,500</span></div><p>A smooth and refreshing drink with a rich taste, perfect for enjoying with your meal.</p><button class="order" data-item="M/Extra Smooth" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f74.png" alt="Moët Rosé" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Moët Rosé</h3><span class="price">₦2,500</span></div><p>An elegant rosé champagne with vibrant fruit flavours, freshness and a refined finish.</p><button class="order" data-item="Moët Rosé" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f75.png" alt="Apple and Cucumber Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Apple &amp; Cucumber (35cl)</h3><span class="price">₦2,500</span></div><p>A fresh and refreshing blend of crisp apple and cool cucumber, freshly prepared and served chilled.</p><button class="order" data-item="Apple & Cucumber (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f76.png" alt="Apple Pineapple and Cucumber Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Apple, Pineapple &amp; Cucumber (35cl)</h3><span class="price">₦2,500</span></div><p>A refreshing combination of sweet apple, tropical pineapple and crisp cucumber, freshly blended for a vibrant taste.</p><button class="order" data-item="Apple, Pineapple & Cucumber (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f77.png" alt="Carrot Pineapple and Apple Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Carrot, Pineapple &amp; Apple (35cl)</h3><span class="price">₦2,500</span></div><p>A naturally refreshing blend of sweet pineapple, crisp apple and fresh carrot, packed with fruity flavour.</p><button class="order" data-item="Carrot, Pineapple & Apple (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f78.png" alt="Orange Apple and Cucumber Juice 35cl" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Orange, Apple &amp; Cucumber (35cl)</h3><span class="price">₦2,500</span></div><p>A bright and refreshing blend of zesty orange, crisp apple and cool cucumber, freshly prepared and chilled.</p><button class="order" data-item="Orange, Apple & Cucumber (35cl)" data-price="₦2,500">Order on WhatsApp</button></div></article>
+
+<article class="dish reveal" data-cat="drink"><div class="dish-img"><img src="f79.png" alt="Moët Brut" loading="lazy"></div><div class="dish-body"><div class="dish-top"><h3>Moët Brut</h3><span class="price">₦2,500</span></div><p>An elegant brut champagne with fresh fruit flavours, balanced character and a refined finish.</p><button class="order" data-item="Moët Brut" data-price="₦2,500">Order on WhatsApp</button></div></article>
+</div></div></section>
+
+<section id="gallery"><div class="container"><div class="head reveal"><div><div class="eyebrow">Inside ZUMA</div><h2>Come hungry. Leave inspired.</h2></div><p>Explore the atmosphere, plates and details that make an evening at ZUMA different.</p></div><div class="gallery-grid">
+<div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=90" alt="Restaurant dining room" loading="lazy"></div>
+<div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=90" alt="Restaurant interior" loading="lazy"></div>
+<div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=90" alt="Fresh restaurant dish" loading="lazy"></div>
+<div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=900&q=90" alt="Plated meal" loading="lazy"></div>
+<div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=90" alt="Restaurant bar" loading="lazy"></div>
+</div></div></section>
+
+<section class="reviews"><div class="container"><div class="head reveal"><div><div class="eyebrow">Guest Notes</div><h2>Good words from good company.</h2></div></div><div class="review-grid">
+<article class="review reveal"><div class="stars">★★★★★</div><p>“The food was beautifully presented and the atmosphere made the whole evening feel special.”</p><div class="author">Amara O.</div></article>
+<article class="review reveal"><div class="stars">★★★★★</div><p>“One of those places where the details are just right. Great service and memorable food.”</p><div class="author">Daniel K.</div></article>
+<article class="review reveal"><div class="stars">★★★★★</div><p>“Perfect for dinner with friends. The menu has something interesting without becoming overwhelming.”</p><div class="author">Sandra E.</div></article>
+</div></div></section>
+
+<section class="reservation" id="reservation"><div class="container reserve-grid"><div class="reserve-copy reveal"><div class="eyebrow">Reservations</div><h2>Your table is waiting.</h2><p>Tell us when you would like to visit. Your request opens in WhatsApp so the team can confirm availability with you.</p><div class="checks"><div><span>✦</span>Same-day requests welcome</div><div><span>✦</span>Special occasions can be arranged</div><div><span>✦</span>Dietary requirements can be discussed</div></div></div>
+<form class="form reveal" id="booking"><div class="form-grid">
+<div class="field"><label>Full Name *</label><input name="name" required placeholder="Your name"></div><div class="field"><label>Phone *</label><input name="phone" required type="tel" placeholder="+234..."></div>
+<div class="field"><label>Email</label><input name="email" type="email" placeholder="you@example.com"></div><div class="field"><label>Guests *</label><select name="guests" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select></div>
+<div class="field"><label>Date *</label><input id="date" name="date" required type="date"></div><div class="field"><label>Preferred Time *</label><select name="time" required><option value="">Select</option><option>10:00 AM</option><option>11:30 AM</option><option>1:00 PM</option><option>2:30 PM</option><option>4:00 PM</option><option>5:30 PM</option><option>7:00 PM</option><option>8:30 PM</option><option>10:00 PM</option></select></div>
+<div class="field full"><label>Special Requests</label><textarea name="requests" placeholder="Birthday, anniversary, dietary requirements, seating preference..."></textarea></div>
+<div class="field full"><button class="btn gold" type="submit">Send Reservation Request →</button></div>
+</div><div class="note">The form opens WhatsApp with your details. Your reservation is confirmed only after the restaurant responds.</div></form></div></section>
+
+<section class="faq" id="faq"><div class="container"><div class="head reveal"><div><div class="eyebrow">Questions</div><h2>Before you arrive.</h2></div></div><div class="faq-list">
+<div class="faq-item reveal"><button class="faq-q">Do I need a reservation?<i>+</i></button><div class="faq-a"><p>Reservations are recommended, especially for evenings and larger groups. Walk-ins may be accommodated when tables are available.</p></div></div>
+<div class="faq-item reveal"><button class="faq-q">Do you offer takeaway?<i>+</i></button><div class="faq-a"><p>Yes. Selected menu items can be ordered for takeaway through WhatsApp.</p></div></div>
+<div class="faq-item reveal"><button class="faq-q">Can you host private events?<i>+</i></button><div class="faq-a"><p>Yes. Contact the team with your preferred date, group size and event type so arrangements can be discussed.</p></div></div>
+<div class="faq-item reveal"><button class="faq-q">Can you handle dietary requirements?<i>+</i></button><div class="faq-a"><p>Please mention dietary requirements in your reservation request. The team can advise on suitable choices.</p></div></div>
+</div></div></section>
+
+<section id="contact"><div class="container contact-grid"><div class="contact-card reveal"><div class="eyebrow">Visit ZUMA</div><h3>Let's make your evening memorable.</h3><div class="row"><small>Location</small>12 Modern Street, The Hub, Abuja, Nigeria</div><div class="row"><small>Opening Hours</small>Monday – Friday: 10AM – 11PM<br>Saturday – Sunday: 9AM – Midnight</div><div class="row"><small>Phone</small><a href="tel:+2348123456789">+234 812 345 6789</a></div><div class="row"><small>Email</small><a href="mailto:hello@zuma.ng">hello@zuma.ng</a></div></div><div class="map reveal"><iframe title="ZUMA Abuja map" src="https://www.google.com/maps?q=Abuja%2C%20Nigeria&output=embed" loading="lazy"></iframe></div></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><div class="logo">ZU<b>MA</b></div><p>Modern dining, bold flavours and warm hospitality in Abuja. Designed for everyday meals and nights worth remembering.</p></div><div><div class="ft-title">Explore</div><div class="ft-links"><a href="#about">Our Story</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a></div></div><div><div class="ft-title">Dining</div><div class="ft-links"><a href="#reservation">Reservations</a><a href="#menu">Takeaway</a><a href="#contact">Location</a><a href="#contact">Contact</a></div></div><div><div class="ft-title">Follow</div><div class="socials"><a class="social" href="#">IG</a><a class="social" href="#">FB</a><a class="social" href="#">TK</a><a class="social" href="#">X</a></div></div></div><div class="bottom"><span>© 2026 ZUMA Modern Dining. All rights reserved.</span><span>Made for memorable meals.</span></div></div></footer>
+
+<a class="wa" id="wa" href="#" aria-label="WhatsApp">WA</a><div class="toast" id="toast"></div><div class="lightbox" id="lightbox"><button class="close" id="close">×</button><img id="lightImg" alt=""></div>
+
+<script>
+const NUMBER="2348123456789";
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const nav=$("#nav"),links=$("#links"),toggle=$("#toggle"),toast=$("#toast"),date=$("#date");
+window.addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>25),{passive:true});
+toggle.onclick=()=>{links.classList.toggle("open");toggle.textContent=links.classList.contains("open")?"×":"☰"};
+$$(".links a").forEach(a=>a.onclick=()=>{links.classList.remove("open");toggle.textContent="☰"});
+const now=new Date(), local=new Date(now-now.getTimezoneOffset()*60000).toISOString().slice(0,10);date.min=local;
+
+$$(".filter").forEach(b=>b.onclick=()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");const f=b.dataset.filter;$$(".dish").forEach(d=>d.classList.toggle("hide",f!="all"&&d.dataset.cat!=f))});
+function wa(text){window.open("https://wa.me/"+NUMBER+"?text="+encodeURIComponent(text),"_blank","noopener,noreferrer")}
+$$(".order").forEach(b=>b.onclick=()=>wa("Hello ZUMA, I'd like to order:\n\n• "+b.dataset.item+" — "+b.dataset.price+"\n\nPlease let me know the next step."));
+$("#wa").onclick=e=>{e.preventDefault();wa("Hello ZUMA, I'd like to make an order.")};
+$("#booking").onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);wa(`Hello ZUMA, I'd like to make a reservation.\n\nName: ${d.get("name")}\nPhone: ${d.get("phone")}\nEmail: ${d.get("email")||"Not provided"}\nGuests: ${d.get("guests")}\nDate: ${d.get("date")}\nPreferred time: ${d.get("time")}\nSpecial requests: ${d.get("requests")||"None"}\n\nPlease confirm availability. Thank you.`);show("Opening WhatsApp with your reservation...")};
+function show(t){toast.textContent=t;toast.classList.add("show");clearTimeout(show.t);show.t=setTimeout(()=>toast.classList.remove("show"),3000)}
+$$(".faq-q").forEach(q=>q.onclick=()=>{const item=q.parentElement,open=item.classList.contains("open");$$(".faq-item").forEach(x=>{x.classList.remove("open");x.querySelector(".faq-a").style.maxHeight=null});if(!open){item.classList.add("open");item.querySelector(".faq-a").style.maxHeight=item.querySelector(".faq-a").scrollHeight+"px"}});
+const lb=$("#lightbox"),li=$("#lightImg");$$(".gallery-item").forEach(x=>x.onclick=()=>{li.src=x.querySelector("img").src;li.alt=x.querySelector("img").alt;lb.classList.add("open");document.body.style.overflow="hidden"});function closeLb(){lb.classList.remove("open");document.body.style.overflow=""}$("#close").onclick=closeLb;lb.onclick=e=>{if(e.target===lb)closeLb()};document.onkeydown=e=>{if(e.key==="Escape")closeLb()};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.1});$$(".reveal").forEach(x=>io.observe(x));
+const sections=$$("main section[id]"),navA=$$(".links a");const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-35% 0 -55%"});sections.forEach(s=>so.observe(s));
+</script>
+<!-- Replace NUMBER, contact details and social URLs with the real restaurant details before publishing. -->
+
+<script>
+(() => {
+  const KEY="zuma_functional_cart";
+  let cart=JSON.parse(localStorage.getItem(KEY)||"[]");
+  const money=n=>"₦"+Number(n||0).toLocaleString("en-NG");
+  const price=v=>Number(String(v||"").replace(/[₦,\s]/g,""))||0;
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(cart));
+  const total=()=>cart.reduce((a,i)=>a+i.price*i.qty,0);
+  const overlay=document.getElementById("zfCartOverlay");
+  const items=document.getElementById("zfCartItems");
+  const summary=document.getElementById("zfCartSummary");
+  const totalEl=document.getElementById("zfCartTotal");
+  const checkout=document.getElementById("zfCheckout");
+
+  function openCart(){render();overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}
+  function closeCart(){overlay.classList.remove("open");overlay.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+
+  const nav=document.querySelector(".nav-in");
+  if(nav){
+    const b=document.createElement("button");
+    b.type="button";b.className="btn outline zf-cart-btn";
+    b.innerHTML='Cart <span class="zf-cart-count" id="zfCartCount">0</span>';
+    nav.insertBefore(b,document.getElementById("toggle"));
+    b.addEventListener("click",openCart);
+  }
+
+  function render(){
+    const count=cart.reduce((a,i)=>a+i.qty,0);
+    const countEl=document.getElementById("zfCartCount");
+    if(countEl)countEl.textContent=count;
+    if(!cart.length){
+      items.innerHTML='<div class="zf-cart-empty">Your cart is empty.<br>Add an item from the menu to begin.</div>';
+      summary.hidden=true;checkout.classList.remove("open");return;
+    }
+    summary.hidden=false;
+    items.innerHTML="";
+    cart.forEach((item,index)=>{
+      const row=document.createElement("div");row.className="zf-cart-item";
+      const img=document.createElement("img");img.className="zf-cart-thumb";img.src=item.image;img.alt=item.name;
+      const middle=document.createElement("div");
+      middle.innerHTML=`<div class="zf-cart-item-name"></div><div class="zf-cart-item-price"></div><div class="zf-qty"><button type="button" data-zf-action="minus" data-zf-index="${index}">−</button><span>${item.qty}</span><button type="button" data-zf-action="plus" data-zf-index="${index}">+</button></div><button class="zf-remove" type="button" data-zf-action="remove" data-zf-index="${index}">Remove</button>`;
+      middle.querySelector(".zf-cart-item-name").textContent=item.name;
+      middle.querySelector(".zf-cart-item-price").textContent=money(item.price)+" each";
+      const line=document.createElement("strong");line.textContent=money(item.price*item.qty);
+      row.append(img,middle,line);items.appendChild(row);
+    });
+    totalEl.textContent=money(total());
+  }
+
+  // Intercept the existing menu buttons at capture phase so the original WhatsApp handler does not run.
+  document.querySelectorAll(".order").forEach(button=>{
+    button.addEventListener("click",event=>{
+      event.preventDefault();event.stopImmediatePropagation();
+      const card=button.closest(".dish");
+      const name=button.dataset.item||card?.querySelector("h3")?.textContent.trim()||"Menu Item";
+      const p=price(button.dataset.price||card?.querySelector(".price")?.textContent);
+      const image=card?.querySelector("img")?.getAttribute("src")||"";
+      if(!p){alert("This menu item needs a valid price before it can be added.");return}
+      const found=cart.find(i=>i.name===name&&i.price===p);
+      if(found)found.qty++;else cart.push({name,price:p,image,qty:1});
+      save();openCart();
+    },true);
+  });
+
+  // Only the floating WhatsApp control is removed; footer contact information is not touched.
+  document.querySelectorAll(".wa").forEach(el=>el.remove());
+
+  document.getElementById("zfCartClose").addEventListener("click",closeCart);
+  document.getElementById("zfContinue").addEventListener("click",closeCart);
+  overlay.addEventListener("click",e=>{if(e.target===overlay)closeCart()});
+
+  document.addEventListener("click",e=>{
+    const c=e.target.closest("[data-zf-action]");if(!c)return;
+    const i=Number(c.dataset.zfIndex);if(!cart[i])return;
+    if(c.dataset.zfAction==="plus")cart[i].qty++;
+    if(c.dataset.zfAction==="minus")cart[i].qty--;
+    if(c.dataset.zfAction==="remove"||cart[i].qty<=0)cart.splice(i,1);
+    save();render();
+  });
+
+  document.getElementById("zfCheckoutOpen").addEventListener("click",()=>{
+    checkout.classList.add("open");
+    checkout.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+
+  document.getElementById("zfType").addEventListener("change",e=>{
+    const a=document.getElementById("zfAddress");
+    if(e.target.value==="Pickup"){a.removeAttribute("required");a.placeholder="Pickup selected — address not required"}
+    else{a.setAttribute("required","");a.placeholder="Enter your delivery address"}
+  });
+
+  document.getElementById("zfPlaceOrder").addEventListener("click",()=>{
+    if(!cart.length){alert("Your cart is empty.");return}
+    const name=document.getElementById("zfName").value.trim();
+    const phone=document.getElementById("zfPhone").value.trim();
+    const type=document.getElementById("zfType").value;
+    const address=document.getElementById("zfAddress").value.trim();
+    const notes=document.getElementById("zfNotes").value.trim();
+    if(!name||!phone||(type==="Delivery"&&!address)){
+      alert(type==="Delivery"?"Please enter your name, phone number and delivery address.":"Please enter your name and phone number.");return;
+    }
+    const order={customer:{name,phone,type,address,notes},items:[...cart],total:total(),createdAt:new Date().toISOString()};
+    localStorage.setItem("zuma_last_order",JSON.stringify(order));
+    const msg=document.getElementById("zfOrderMessage");
+    msg.textContent=`Order request saved for ${name}. Total: ${money(order.total)}.`;
+    msg.classList.add("show");
+    cart=[];save();render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
